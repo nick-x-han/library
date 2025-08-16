@@ -99,4 +99,19 @@ input[type="checkbox"]:disabled {
 
 .book {
     border: 1px skyblue solid;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.toggle-read {
+    border: 1px solid palegreen;
+    background-color: inherit;
+    font-family: inherit;
+    color: blue;
+}
+.remove {
+    background-color: red;
+    font-size: 80%;
+
 }

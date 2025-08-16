@@ -9,8 +9,11 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.hasReadString = function() {
+        return this.read === false ? "Not Read" : "Already Read";
+    }
     this.info = function() {
-        return `${this.title} by ${this.author}, ${pages} pages, ` + (this.read === false ? "not read yet" : "already read");
+        return `${this.title} by ${this.author}, ${pages} pages, ` + this.hasReadString();
     }
 }
 
@@ -19,8 +22,38 @@ function addBookToLibrary(library, title, author, pages, read) {
     library.push(book);
     const div = document.createElement("div");
     div.classList.add("book");
-    div.textContent = book.info();
+    div.setAttribute("data-id", book.id);
     display.appendChild(div);
+    let titleObject = document.createElement("div");
+    let authorObject = document.createElement("div");
+    let pagesObject = document.createElement("span");
+    let readButton = document.createElement("button");
+    let removeButton = document.createElement("button");
+
+    titleObject.textContent = title;
+    authorObject.textContent = "by: " + author;
+    pagesObject.textContent = pages + " pages";
+    readButton.textContent = book.hasReadString();
+    readButton.classList.add("toggle-read");
+    removeButton.textContent = "Remove";
+    removeButton.classList.add("remove");
+
+    readButton.addEventListener("click", e => {
+        
+    })
+
+    removeButton.addEventListener("click", e => {
+        let id = removeButton.parentNode.parentNode.dataset.id;
+        let index = myLibrary.findIndex(book => book.id == id);
+        myLibrary.splice(index, 1);
+        removeButton.parentNode.remove();
+    })
+
+    div.appendChild(titleObject);
+    div.appendChild(authorObject);
+    div.appendChild(pagesObject);
+    div.appendChild(readButton);
+    div.appendChild(removeButton);
 }
 
 const display = document.querySelector(".display");
@@ -63,6 +96,9 @@ form.addEventListener("submit", e => {
     e.preventDefault();
 
     addBookToLibrary(myLibrary, title.value, author.value, pages.value, isRead.value);
+    title.value = "";
+    author.value = "";
+    pages.value = "";
 
     modal.close();
 })

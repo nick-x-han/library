@@ -74,13 +74,6 @@ const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const isRead = document.querySelector('#read');
 
-// myLibrary.forEach(book => {
-//     const div = document.createElement("div");
-//     div.classList.add("book");
-//     div.textContent = book.info();
-//     display.appendChild(div);
-// })
-
 addBookToLibrary(myLibrary, "Wide Sargasso Sea", "Jane Eyre", 758, false);
 addBookToLibrary(myLibrary, "Dreadnaught", "Sam Peston", 410, true);
 addBookToLibrary(myLibrary, "Kite", "Kid Win", 322, true);

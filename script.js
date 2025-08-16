@@ -43,6 +43,14 @@ const isRead = document.querySelector('#read');
 //     display.appendChild(div);
 // })
 
+addBookToLibrary(myLibrary, "Title", "Author", 322, true);
+addBookToLibrary(myLibrary, "Title", "Author", 322, true);
+
+addBookToLibrary(myLibrary, "Title", "Author", 322, true);
+
+addBookToLibrary(myLibrary, "Title", "Author", 322, true);
+
+
 addButton.addEventListener("click", e => {
     modal.showModal();
 })

@@ -37,11 +37,6 @@ body {
     padding: 0.25em 0.75em;
 }
 
-.display {
-    display: grid;
-
-}
-
 form {
     display: grid;
     place-items: center;
@@ -92,4 +87,16 @@ input[type="checkbox"]:disabled {
   border-color: black;
   background: #dddddd;
   color: gray;
+}
+
+.display {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    padding: 1em;
+}
+
+.book {
+    border: 1px skyblue solid;
 }

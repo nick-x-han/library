@@ -38,6 +38,10 @@ function addBookToLibrary(library, title, author, pages, read) {
     removeButton.textContent = "Remove";
     removeButton.classList.add("remove");
 
+    titleObject.style.fontWeight = "bold";
+    titleObject.style.color = "orange";
+    titleObject.style.backgroundColor = "yellow";
+
     readButton.addEventListener("click", e => {
         let id = readButton.parentNode.dataset.id;
         let index = myLibrary.findIndex(book => book.id == id);

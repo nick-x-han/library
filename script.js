@@ -39,11 +39,16 @@ function addBookToLibrary(library, title, author, pages, read) {
     removeButton.classList.add("remove");
 
     readButton.addEventListener("click", e => {
-        
+        let id = readButton.parentNode.dataset.id;
+        let index = myLibrary.findIndex(book => book.id == id);
+        let book = myLibrary[index];
+        book.read = !book.read;
+
+        readButton.textContent = book.hasReadString();
     })
 
     removeButton.addEventListener("click", e => {
-        let id = removeButton.parentNode.parentNode.dataset.id;
+        let id = removeButton.parentNode.dataset.id;
         let index = myLibrary.findIndex(book => book.id == id);
         myLibrary.splice(index, 1);
         removeButton.parentNode.remove();
@@ -78,7 +83,7 @@ const isRead = document.querySelector('#read');
 
 addBookToLibrary(myLibrary, "Wide Sargasso Sea", "Jane Eyre", 758, false);
 addBookToLibrary(myLibrary, "Dreadnaught", "Sam Peston", 410, true);
-addBookToLibrary(myLibrary, "Title", "Author", 322, true);
+addBookToLibrary(myLibrary, "Kite", "Kid Win", 322, true);
 
 
 

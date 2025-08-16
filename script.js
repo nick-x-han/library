@@ -24,6 +24,7 @@ const modal = document.querySelector("#form-modal");
 const addButton = document.querySelector(".add");
 const closeButton = document.querySelector(".close");
 const submitButton = document.querySelector(".submit");
+const form = document.querySelector("form");
 
 myLibrary.forEach(book => {
     const div = document.createElement("div");
@@ -41,6 +42,11 @@ closeButton.addEventListener("click", e => {
 })
 
 submitButton.addEventListener("click", e => {
-    e.preventDefault();
-    e.close();
+    // e.preventDefault();
+    
+    // modal.close();
+})
+
+form.addEventListener("formdata", e => {
+    console.log(e.formData.getAll());
 })

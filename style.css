@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .main {
     background-color: #eaeaea;
     min-height: 100vh;
@@ -22,6 +23,7 @@ body {
 .close {
     background-color: red;
     color: white;
+    justify-self: end;
 }
 
 .submit {
@@ -29,7 +31,8 @@ body {
     color: red;
 }
 
-.submit, .close {
+.submit,
+.close {
     border-radius: 8px;
     padding: 0.25em 0.75em;
 }
@@ -56,4 +59,37 @@ button {
 
 input {
     font-size: 1.25rem;
+}
+
+/* using advanced form styling from mdn to do this */
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    border: 1px solid gray;
+    /* Adjusts the position of the checkboxes on the text baseline */
+    vertical-align: -2px;
+    /* Set here so that Windows' High-Contrast Mode can override */
+    color: green;
+}
+
+input[type="checkbox"]::before {
+  content: "✔";
+  position: absolute;
+  font-size: 1.2em;
+  right: -1px;
+  top: -0.2em;
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+  /* Use `visibility` instead of `display` to avoid recalculating layout */
+  visibility: visible;
+}
+
+input[type="checkbox"]:disabled {
+  border-color: black;
+  background: #dddddd;
+  color: gray;
 }

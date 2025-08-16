@@ -11,7 +11,8 @@
     <div class="main">
         <button class="add">New Book</button>
         <dialog id="form-modal">
-            <form action="#" method="dialog" >
+            <form>
+                <button class="close">X</button>
                 <div>
                     <label for="author">Author</label>
                     <input type="text" name="author" id="author" required>
@@ -24,15 +25,14 @@
                     <label for="pages">Pages</label>
                     <input type="number" name="pages" id="pages" required>
                 </div>
-                <fieldset>
-                    <legend>Has Been Read?</legend>
-                    <label for="yes">Yes</label>
-                    <input type="radio" name="read" id="yes" value="yes">
-                    <label for="no">No</label>
-                    <input type="radio" name="read" id="no" value="no" checked>
-                </fieldset>
+                
+                <div>
+                    <label for="yes">Read Book Already?</label>
+                    <input type="checkbox" name="read" id="yes" value="yes">
+                </div>
+
                 <button class="submit">Submit</button>
-                <button class="close">Cancel</button>
+                
             </form>
         </dialog>
         <div class="display">

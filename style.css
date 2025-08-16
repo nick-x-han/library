@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    background-color: #eaeaea;
+    min-height: 100vh;
+    max-width: clamp(650px, 50%, 1000px);
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.add {
+    background-color: #abcdef;
+    padding: 0.5em 2em;
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    color: green;
+}
+
+.close {
+    background-color: red;
+    color: white;
+}
+
+.submit {
+    background-color: chartreuse;
+    color: red;
+}
+
+.submit, .close {
+    border-radius: 8px;
+    padding: 0.25em 0.75em;
+}
+
+.display {
+    display: grid;
+
+}
+
+form {
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+fieldset {
+    margin: 1em 0;
+
+}
+
+button {
+    font-size: inherit;
+}
+
+input {
+    font-size: 1.25rem;
+}

@@ -76,12 +76,10 @@ const isRead = document.querySelector('#read');
 //     display.appendChild(div);
 // })
 
-addBookToLibrary(myLibrary, "Title", "Author", 322, true);
+addBookToLibrary(myLibrary, "Wide Sargasso Sea", "Jane Eyre", 758, false);
+addBookToLibrary(myLibrary, "Dreadnaught", "Sam Peston", 410, true);
 addBookToLibrary(myLibrary, "Title", "Author", 322, true);
 
-addBookToLibrary(myLibrary, "Title", "Author", 322, true);
-
-addBookToLibrary(myLibrary, "Title", "Author", 322, true);
 
 
 addButton.addEventListener("click", e => {
@@ -94,7 +92,7 @@ closeButton.addEventListener("click", e => {
 
 form.addEventListener("submit", e => {
     e.preventDefault();
-    let hasRead = isRead.value === "yes" ? true : false;
+    let hasRead = isRead.matches(':checked') ? true : false;
     addBookToLibrary(myLibrary, title.value, author.value, pages.value, hasRead);
     title.value = "";
     author.value = "";

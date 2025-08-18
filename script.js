@@ -1,18 +1,21 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    if (!new.target) {
-        throw Error("NO");
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.hasReadString = function() {
-        return this.read === false ? "Not Read" : "Already Read";
+
+    id = crypto.randomUUID();
+
+    //since this is a class field, it is defined per instance
+    hasReadString = function () {
+        return read === false ? "Not Read" : "Already Read";
     }
-    this.info = function() {
+    //meanwhile, this is a method, so it is defined on the prototype
+    info () {
         return `${this.title} by ${this.author}, ${pages} pages, ` + this.hasReadString();
     }
 }
